@@ -49,3 +49,28 @@ p {
     font-size: 18px;
     color: #666; /* Slightly lighter text */
 }
+.hero { 
+    text-align: center; /* Center content */
+    padding: 50px; /* Add space inside */
+    background: url('/static/images/restaurant.jpg') center/cover; /* Background image */
+    color: white; /* Text color */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Bigger heading */
+    margin-bottom: 10px; /* Space below */
+}
+
+.hero p {
+    font-size: 1.2rem; /* Slightly larger text */
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
