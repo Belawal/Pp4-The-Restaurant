@@ -1,0 +1,51 @@
+/* Style for the whole page */
+body {
+    font-family: Arial, sans-serif;  /* Use a clean font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+/* Navbar styling */
+nav {
+    background-color: #333; /* Dark gray background */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white; /* White text */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Center the main content */
+main {
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #333; /* Dark text for contrast */
+    font-size: 32px;
+}
+
+p {
+    font-size: 18px;
+    color: #666; /* Slightly lighter text */
+}
