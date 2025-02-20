@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Restaurant</title>
-</head>
-<body>
-    <h1>Welcome to Our Restaurant!</h1>
-    <p>Book a table and enjoy meals.</p>
-</body>
-</html>
+{% extends 'booking/base.html' %}  <!-- Uses base.html for consistent layout -->
+
+{% block content %}  <!-- Defines the main content section for this page -->
+  <h1>Welcome to Our Restaurant</h1>  <!-- Page heading -->
+  <p>Enjoy our delicious meals and book your table today!</p>  <!-- Short welcome message -->
+{% endblock %}
