@@ -8,31 +8,40 @@ body {
 
 /* Navbar styling */
 nav {
-    background-color: #333; /* Dark gray background */
-    padding: 10px;
-    text-align: center;
+    background-color: #333; /* Dark background for navbar */
+    padding: 10px 0; /* Add padding to top and bottom */
+    position: fixed; /* Stick to the top */
+    width: 100%; /* Full width */
+    top: 0; /* Align to the top */
+    left: 0;
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 nav ul {
-    list-style: none;
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Arrange items in a row */
+    justify-content: center; /* Center items horizontally */
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 15px; /* Add spacing between links */
 }
 
 nav ul li a {
-    color: white; /* White text */
-    text-decoration: none;
-    font-size: 18px;
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Make text bigger */
+    padding: 8px 12px; /* Add padding inside links */
+    transition: 0.3s; /* Smooth hover effect */
 }
 
 nav ul li a:hover {
-    text-decoration: underline; /* Underline on hover */
+    background-color: red; /* Change background on hover */
+    border-radius: 5px; /* Round edges */
 }
+
 
 /* Center the main content */
 main {
