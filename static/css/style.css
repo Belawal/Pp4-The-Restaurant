@@ -91,7 +91,24 @@ footer {
     margin-top: 20px;
 }
 
-/* Responsive navbar styling */
+/* Responsive styling for large screens (up to 1200px) */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* Responsive styling for tablets and small desktops (up to 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 85%;
+    }
+    body {
+        background-size: cover;
+    }
+}
+
+/* Responsive styling for tablets (up to 768px) */
 @media (max-width: 768px) {
     nav {
         padding: 5px 0;
@@ -99,5 +116,33 @@ footer {
     .container {
         max-width: 100%;
         padding: 10px;
+    }
+    body {
+        background-size: contain;
+    }
+}
+
+/* Responsive styling for mobile phones (up to 600px) */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Responsive styling for small mobile phones (up to 480px) */
+@media (max-width: 480px) {
+    body {
+        background-size: contain;
+    }
+    .container {
+        padding: 5px;
+        max-width: 95%;
+    }
+    nav {
+        text-align: center;
     }
 }
