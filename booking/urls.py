@@ -1,6 +1,8 @@
-from django.urls import path
-from booking.views import home  # Import home function directly
+from django.urls import path  # Import path for URL mapping
+from . import views  # Import views from current app
 
 urlpatterns = [
-    path('', home, name='home'),  # Homepage URL
+    path("", views.home, name="home"),  # Route for homepage
+    path("signup/", views.signup, name="signup"),  # Route for user signup
+    path("login/", views.login_view, name="login"),  # Route for user login
 ]

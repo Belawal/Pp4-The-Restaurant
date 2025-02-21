@@ -55,7 +55,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* Text color */
+    color: rgb(20, 19, 19); /* Text color */
     text-align: center;
 }
 
