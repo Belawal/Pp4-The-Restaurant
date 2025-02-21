@@ -1,0 +1,10 @@
+{% extends "base.html" %}  <!-- Inherit from base template -->
+
+{% block content %}
+<h2>Sign Up</h2>  <!-- Page heading -->
+<form method="POST">  <!-- Form for signup -->
+    {% csrf_token %}  <!-- Prevents CSRF attacks -->
+    {{ form.as_p }}  <!-- Renders form fields -->
+    <button type="submit">Sign Up</button>  <!-- Signup button -->
+</form>
+{% endblock %}
