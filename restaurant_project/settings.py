@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'booking'
+    'booking',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'restaurant_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "restaurant_project/booking/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,10 +116,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/' # URL prefix for static files
+STATIC_URL = 'static/' # URL prefix for static files
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static"  # Tells Django where to find static files
+    BASE_DIR /  "restaurant_project/booking/static"  # Tells Django where to find static files
 ]
 
 # Default primary key field type

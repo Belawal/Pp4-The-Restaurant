@@ -15,7 +15,7 @@ def signup(request):
             return redirect("home")  # Redirect to home page
     else:
         form = UserCreationForm()  # Create empty signup form
-    return render(request, "signup.html", {"form": form})  # Render signup page
+    return render(request, "booking/signup.html", {"form": form})  # Render signup page
 
 def login_view(request):
     """Handles user login process"""
@@ -27,4 +27,4 @@ def login_view(request):
             return redirect("home")  # Redirect to home page
     else:
         form = AuthenticationForm()  # Create empty login form
-    return render(request, "login.html", {"form": form})  # Render login page
+    return render(request, "booking/login.html", {"form": form})  # Render login page
