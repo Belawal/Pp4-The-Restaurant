@@ -1,0 +1,90 @@
+/* Import static files */
+{% load static %}
+
+/* General styles */
+body {
+    background-image: url("../images/restaurant.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 60px; /* Adjust to fit navbar height */
+}
+
+.container {
+    position: relative;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Navigation bar styles */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(51, 51, 51, 0.9); /* Slight transparency */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none; /* Removes default list styles */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centers the navigation links */
+}
+
+nav ul li {
+    margin: 0 15px; /* Adds spacing between nav items */
+}
+
+nav ul li a {
+    color: white; /* Makes links white */
+    text-decoration: none; /* Removes underline */
+    font-size: 18px;
+}
+
+/* Hero section styles */
+.hero {
+    height: 400px; /* Adjust height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center;
+}
+
+/* Button styles */
+.btn {
+    background-color: #ff5733; /* Orange button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #e04e2b; /* Darker shade on hover */
+}
+
+/* Main content styles */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}

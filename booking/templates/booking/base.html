@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Restaurant{% endblock %}</title>
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
+        <img src="{% static 'images/restaurant.jpg' %}" alt="Restaurant Image">
         <nav>  <!-- Navigation bar -->
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>  <!-- Link to home page -->
