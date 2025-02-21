@@ -4,28 +4,30 @@
 /* General styles */
 body {
     background-image: url("../images/restaurant.jpg");
-    background-size: cover;
+    background-size: cover; /* Ensure it covers the entire screen */
     background-position: center;
-    background-attachment: fixed;
-    padding-top: 60px; /* Adjust to fit navbar height */
+    background-attachment: fixed; /* Keep it static */
+    margin: 0;
+    padding-top: 60px; /* Prevent content from hiding behind navbar */
 }
 
 .container {
     position: relative;
     z-index: 5;
-    background-color: rgba(6, 6, 6, 0.8);
+    background-color: rgba(255, 255, 255, 0.9); /* Improve readability */
     padding: 20px;
     border-radius: 10px;
+    margin: 20px auto;
+    max-width: 90%;
 }
 
 /* Navigation bar styles */
 nav {
-    position: fixed;
+    position: fixed; /* Keep it at the top */
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(51, 51, 51, 0.9); /* Slight transparency */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for readability */
     padding: 10px 0;
 }
 
@@ -87,4 +89,15 @@ footer {
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+}
+
+/* Responsive navbar styling */
+@media (max-width: 768px) {
+    nav {
+        padding: 5px 0;
+    }
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
 }
