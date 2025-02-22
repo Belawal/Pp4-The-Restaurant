@@ -8,5 +8,6 @@
     {{ form.as_p }}  <!-- Renders form fields -->
     <button type="submit">Login</button>  <!-- Login button -->
 </form>
+<p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
 </div>
 {% endblock %}
