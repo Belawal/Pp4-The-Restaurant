@@ -27,6 +27,14 @@
                         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li> <!-- Show Logout if logged in -->
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li> <!-- Show Sign Up if logged out -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> <!-- Show Login if logged out -->
+                    {% endif %}
+                    
                     </ul>
                 </div>
             </div>
