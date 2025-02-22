@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect  # Import functions for rendering and redirecting
-from django.contrib.auth import login, authenticate, logout  # Import login, authenticate, and logout functions
+from django.contrib.auth import login, authenticate, logout  # Import login, authenticate, logout functions
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  # Import Django forms
 
 def home(request):
@@ -29,7 +29,7 @@ def login_view(request):
         form = AuthenticationForm()  # Create empty login form
     return render(request, "booking/login.html", {"form": form})  # Render login page
 
-    def logout_view(request):
+def logout_view(request):
     """Handles user logout process"""
     logout(request)  # Log out the current user
     return redirect('home')  # Redirect to home page
