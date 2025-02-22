@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect  # Import functions for rendering and redirecting
 from django.contrib.auth import login, authenticate, logout  # Import login, authenticate, logout functions
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  # Import Django forms
+from .forms import ReservationForm  # Import ReservationForm from forms
+
 
 def home(request):
     return render(request, 'booking/home.html')  # Renders the homepage
@@ -33,3 +35,14 @@ def logout_view(request):
     """Handles user logout process"""
     logout(request)  # Log out the current user
     return redirect('home')  # Redirect to home page
+
+def reservation_view(request):
+    """Handles reservation form submission"""
+    if request.method == "POST":  # Check if form is submitted
+        form = ReservationForm(request.POST)  # Get form data
+        if form.is_valid():  # Validate form
+            # Process reservation (save to database or send email - add later)
+            return redirect("home")  # Redirect to home page after reservation
+    else:
+        form = ReservationForm()  # Create empty reservation form
+    return render(request, "booking/reservation.html", {"form": form})  # Render reservation page
