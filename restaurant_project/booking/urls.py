@@ -1,4 +1,4 @@
-from django.urls import path  # Import path for URL mapping
+from django.urls import path # Import path for URL mapping
 from . import views  # Import views from current app
 
 urlpatterns = [

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,13 +32,14 @@ ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-aqd1poenhq9.ws-us117.gitpod.io', 
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'booking',
+    'restaurant_project.booking',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'restaurant_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "restaurant_project/booking/templates"],
+        'DIRS': [BASE_DIR / "restaurant_project" / "booking" / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,7 +121,7 @@ USE_TZ = True
 STATIC_URL = 'static/' # URL prefix for static files
 
 STATICFILES_DIRS = [
-    BASE_DIR /  "restaurant_project/booking/static"  # Tells Django where to find static files
+    os.path.join(BASE_DIR, "restaurant_project", "booking", "static")  # Tells Django where to find static files
 ]
 
 # Default primary key field type
