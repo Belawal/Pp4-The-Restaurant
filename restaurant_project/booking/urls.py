@@ -6,5 +6,5 @@ urlpatterns = [
     path("signup/", views.signup, name="signup"),  # Route for user signup
     path("login/", views.login_view, name="login"),  # Route for user login
     path('logout/', views.logout_view, name='logout'),  # Logout page
-     path('reservation/', views.reservation_view, name='reservation'),  # Route for reservation form
+    path('reservation/', views.reservation_view, name='reservation'),  # Route for reservation form
 ]
