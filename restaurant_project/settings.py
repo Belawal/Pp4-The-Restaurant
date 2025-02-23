@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-aqd1poenhq9.ws-us117.gitpod.io', '127.0.0.1', 'localhost']
 
+# Allow Gitpod URL for CSRF protection
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-belawal-pp4therestauran-aqd1poenhq9.ws-us117.gitpod.io',
+]
+
 
 # Application definition
 
