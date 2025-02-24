@@ -60,7 +60,7 @@ def is_admin(user):
 @user_passes_test(is_admin)
 def admin_reservations(request):
     reservations = Reservation.objects.all()  # Get all reservations
-    return render(request, 'admin_reservations.html', {'reservations': reservations})
+    return render(request, 'booking/admin_reservations.html', {'reservations': reservations})
 
 # Admin view: Cancel a reservation
 @login_required
@@ -74,7 +74,7 @@ def cancel_reservation(request, reservation_id):
 @login_required
 def user_reservations(request):
     reservations = Reservation.objects.filter(user=request.user)  # Get current user's bookings
-    return render(request, 'user_reservations.html', {'reservations': reservations})
+    return render(request, 'booking/user_reservations.html', {'reservations': reservations})
 
 # User view: Cancel their own booking
 @login_required

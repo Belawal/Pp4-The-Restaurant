@@ -25,8 +25,17 @@
                         <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'reservation' %}">Reservations</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+
                         
-                        {% if request.user.is_authenticated %}
+                     {% if request.user.is_authenticated %}
+                                <!-- Link to view user's reservations -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'user_reservations' %}">My Reservations</a></li>
+
+                                <!-- Only visible to admin users (is_staff) -->
+                    {% if request.user.is_staff %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_reservations' %}">Manage Reservations</a></li>
+                    {% endif %}
+
                         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li> <!-- Show Logout if logged in -->
                     {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li> <!-- Show Sign Up if logged out -->
