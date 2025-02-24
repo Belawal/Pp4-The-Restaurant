@@ -12,6 +12,9 @@ class Reservation(models.Model):
     time = models.TimeField()  # Stores booking time
     guests = models.IntegerField()  # Number of guests
 
+class Meta:
+    db_table = "booking_reservation"
+
     def __str__(self):
         return f"{self.name} - {self.date} at {self.time}"
 

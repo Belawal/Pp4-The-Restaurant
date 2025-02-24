@@ -1,7 +1,8 @@
 """
-{% extends 'base.html' %}  <!-- Extend from base template -->
+{% extends "booking/base.html" %}  <!-- Extend from base template -->
 
 {% block content %}
+<div class="container">
 <h2>My Reservations</h2>
 
 <!-- Display user's reservations in a table format -->
@@ -30,5 +31,5 @@
     </tr>
     {% endfor %}
 </table>
+</div>
 {% endblock %}  <!-- End of content block -->
-"""
