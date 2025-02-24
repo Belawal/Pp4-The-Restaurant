@@ -1,0 +1,33 @@
+"""
+{% extends 'base.html' %}  <!-- Extend from base template -->
+
+{% block content %}
+<h2>Admin: View and Manage Reservations</h2>
+
+<!-- Display reservations in a table format -->
+<table border="1">
+    <tr>
+        <th>Name</th>  <!-- Column for guest's name -->
+        <th>Email</th>  <!-- Column for guest's email address -->
+        <th>Date</th>  <!-- Column for reservation date -->
+        <th>Time</th>  <!-- Column for reservation time -->
+        <th>Guests</th>  <!-- Column for number of guests -->
+        <th>Actions</th>  <!-- Column for actions (e.g., cancel) -->
+    </tr>
+    
+    <!-- Loop through all reservations and display each in a row -->
+    {% for reservation in reservations %}
+    <tr>
+        <td>{{ reservation.name }}</td>  <!-- Display guest's name -->
+        <td>{{ reservation.email }}</td>  <!-- Display guest's email -->
+        <td>{{ reservation.date }}</td>  <!-- Display reservation date -->
+        <td>{{ reservation.time }}</td>  <!-- Display reservation time -->
+        <td>{{ reservation.guests }}</td>  <!-- Display number of guests -->
+        <td>
+            <!-- Link to cancel the reservation -->
+            <a href="{% url 'cancel_reservation' reservation.id %}">Cancel</a>
+        </td>
+    </tr>
+    {% endfor %}  <!-- End of reservation loop -->
+</table>
+{% endblock %}  <!-- End of content block -->
