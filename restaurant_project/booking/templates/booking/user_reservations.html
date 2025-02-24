@@ -1,0 +1,34 @@
+"""
+{% extends 'base.html' %}  <!-- Extend from base template -->
+
+{% block content %}
+<h2>My Reservations</h2>
+
+<!-- Display user's reservations in a table format -->
+<table border="1">
+    <tr>
+        <th>Date</th>  <!-- Column for reservation date -->
+        <th>Time</th>  <!-- Column for reservation time -->
+        <th>Guests</th>  <!-- Column for number of guests -->
+        <th>Actions</th>  <!-- Column for actions (e.g., cancel) -->
+    </tr>
+
+    <!-- Loop through user's reservations and display each in a row -->
+    {% for reservation in reservations %}
+    <tr>
+        <td>{{ reservation.date }}</td>  <!-- Display reservation date -->
+        <td>{{ reservation.time }}</td>  <!-- Display reservation time -->
+        <td>{{ reservation.guests }}</td>  <!-- Display number of guests -->
+        <td>
+            <!-- Link to cancel the reservation -->
+            <a href="{% url 'user_cancel_reservation' reservation.id %}">Cancel</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No reservations found.</td>  <!-- Display if no reservations exist -->
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}  <!-- End of content block -->
+"""
