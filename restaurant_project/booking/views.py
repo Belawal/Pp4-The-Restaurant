@@ -1,6 +1,9 @@
-from django.shortcuts import render, redirect  # Import functions for rendering and redirecting
+from django.shortcuts import render, redirect, get_object_or_404  # Import functions for rendering and redirecting, and fetching objects
 from django.contrib.auth import login, authenticate, logout  # Import login, authenticate, logout functions
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  # Import Django forms
+from django.contrib.auth.decorators import login_required, user_passes_test  # Import decorators for access control
+from .models import Reservation  # Import Reservation model
+
 from .forms import ReservationForm  # Import ReservationForm from forms
 
 
@@ -46,3 +49,37 @@ def reservation_view(request):
     else:
         form = ReservationForm()  # Create empty reservation form
     return render(request, "booking/reservation.html", {"form": form})  # Render reservation page
+
+# Check if user is admin
+
+def is_admin(user):
+    return user.is_staff
+
+# Admin view: Show all reservations
+@login_required
+@user_passes_test(is_admin)
+def admin_reservations(request):
+    reservations = Reservation.objects.all()  # Get all reservations
+    return render(request, 'admin_reservations.html', {'reservations': reservations})
+
+# Admin view: Cancel a reservation
+@login_required
+@user_passes_test(is_admin)
+def cancel_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id)
+    reservation.delete()  # Delete the booking
+    return redirect('admin_reservations')
+
+# User view: Show their own bookings
+@login_required
+def user_reservations(request):
+    reservations = Reservation.objects.filter(user=request.user)  # Get current user's bookings
+    return render(request, 'user_reservations.html', {'reservations': reservations})
+
+# User view: Cancel their own booking
+@login_required
+def user_cancel_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id, user=request.user)
+    reservation.delete()  # Delete the user's booking
+    return redirect('user_reservations')
+
