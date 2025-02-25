@@ -5,10 +5,11 @@
   <section class="hero">  <!-- Hero section -->
     <h2>Make a Reservation</h2>  <!-- page heading -->
     <form method="post">  <!-- Form for reservation submission -->
+
       {% csrf_token %}  <!-- CSRF protection token -->
 
       {{ form.as_p }}  <!-- Render form fields as paragraphs -->
-
+      
       <button type="submit">Submit Reservation</button>  <!-- Submit button -->
   </form>
 

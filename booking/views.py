@@ -44,6 +44,9 @@ def reservation_view(request):
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.save()
             return redirect("home")
     else:
         form = ReservationForm()
