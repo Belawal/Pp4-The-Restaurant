@@ -3,7 +3,6 @@ from django.contrib.auth import login, authenticate, logout  # Import login, aut
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  # Import Django forms
 from django.contrib.auth.decorators import login_required, user_passes_test  # Import decorators for access control
 from .models import Reservation  # Import Reservation model
-
 from .forms import ReservationForm  # Import ReservationForm from forms
 
 
@@ -41,23 +40,22 @@ def logout_view(request):
 
 @login_required  # Ensures only logged-in users can book
 def reservation_view(request):
+  """Handles reservation form submission with user authentication"""
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
-            reservation = form.save(commit=False)  # Don't save yet
-            reservation.user = request.user  # Link to logged-in user
-
-            # Ensure reservation email matches user's email
-            if reservation.email != request.user.email:
-                form.add_error('email', "Email must match your account email.")
+            # Ensure reservation email matches the logged-in user's email
+            if form.cleaned_data['email'] != request.user.email:
+                form.add_error('email', 'Email must match your signup email.')
             else:
-                reservation.save()  # Save only if email matches
-                return redirect("user_reservations")  # Redirect to 'My Reservations'
+                reservation = form.save(commit=False)  # Create reservation but don't save yet
+                reservation.user = request.user       # Link the reservation to the logged-in user
+                reservation.save()                   # Save reservation
+                return redirect("user_reservations")  # Redirect to user's reservation page
     else:
         form = ReservationForm()
 
     return render(request, "booking/reservation.html", {"form": form})
-
 # Check if user is admin
 
 def is_admin(user):
