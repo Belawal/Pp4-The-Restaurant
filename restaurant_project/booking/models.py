@@ -29,5 +29,3 @@ from django.contrib import admin
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'date', 'time', 'guests')  # Show these fields in admin panel
     list_filter = ('date', 'time')  # Filter by date and time for easy viewing
-
-admin.site.register(Reservation, ReservationAdmin)  # Register model for admin panel

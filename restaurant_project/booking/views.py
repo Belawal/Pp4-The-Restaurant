@@ -39,16 +39,24 @@ def logout_view(request):
     logout(request)  # Log out the current user
     return redirect('home')  # Redirect to home page
 
+@login_required  # Ensures only logged-in users can book
 def reservation_view(request):
-    """Handles reservation form submission"""
-    if request.method == "POST":  # Check if form is submitted
-        form = ReservationForm(request.POST)  # Get form data
-        if form.is_valid():  # Validate form
-            # Process reservation (save to database or send email - add later)
-            return redirect("home")  # Redirect to home page after reservation
+    if request.method == "POST":
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save(commit=False)  # Don't save yet
+            reservation.user = request.user  # Link to logged-in user
+
+            # Ensure reservation email matches user's email
+            if reservation.email != request.user.email:
+                form.add_error('email', "Email must match your account email.")
+            else:
+                reservation.save()  # Save only if email matches
+                return redirect("user_reservations")  # Redirect to 'My Reservations'
     else:
-        form = ReservationForm()  # Create empty reservation form
-    return render(request, "booking/reservation.html", {"form": form})  # Render reservation page
+        form = ReservationForm()
+
+    return render(request, "booking/reservation.html", {"form": form})
 
 # Check if user is admin
 
