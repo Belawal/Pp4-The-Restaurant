@@ -40,23 +40,14 @@ def logout_view(request):
 
 @login_required  # Ensures only logged-in users can book
 def reservation_view(request):
-  """Handles reservation form submission with user authentication"""
+    """Handles reservation form submission"""
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
-            # Ensure reservation email matches the logged-in user's email
-            if form.cleaned_data['email'] != request.user.email:
-                form.add_error('email', 'Email must match your signup email.')
-            else:
-                reservation = form.save(commit=False)  # Create reservation but don't save yet
-                reservation.user = request.user       # Link the reservation to the logged-in user
-                reservation.save()                   # Save reservation
-                return redirect("user_reservations")  # Redirect to user's reservation page
+            return redirect("home")
     else:
         form = ReservationForm()
-
     return render(request, "booking/reservation.html", {"form": form})
-# Check if user is admin
 
 def is_admin(user):
     return user.is_staff
