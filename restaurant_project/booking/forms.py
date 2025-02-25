@@ -5,9 +5,9 @@ from .models import Reservation
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['name', 'date', 'time', 'guests']  # Removed 'email' to auto-fill it
+        fields = ['name', 'email', 'date', 'time', 'guests']  # Include email for validation
 
-    # Customize widgets for better input fields
+    # Customize widgets for better input fields (date and time pickers)
     widgets = {
         'date': forms.DateInput(attrs={'type': 'date'}),  # Date picker
         'time': forms.TimeInput(attrs={'type': 'time'}),  # Time picker
