@@ -104,7 +104,7 @@ This is a Django-based web app that lets users make restaurant reservations. Use
 2. Go to **Settings**.
 3. Scroll down to **GitHub Pages**.
 4. Select the deployment source from "None" to "main" and save.
-5. Refresh the page and check the deployment section for the provided link.
+5. Refresh the page and check the deployment section for the provided link : https://github.com/Belawal/Pp4-The-Restaurant.git
 
 ## Main Pages
 
