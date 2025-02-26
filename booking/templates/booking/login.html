@@ -3,6 +3,11 @@
 {% block content %}
 <div class="container">
 <h2>Login</h2>  <!-- Page heading -->
+
+{% if request.GET.next == "/reservation/" %}
+    <p>Please log in to book a reservation.</p>
+{% endif %}
+
 <form method="POST">  <!-- Form for login -->
     {% csrf_token %}  <!-- Prevents CSRF attacks -->
     {{ form.as_p }}  <!-- Renders form fields -->

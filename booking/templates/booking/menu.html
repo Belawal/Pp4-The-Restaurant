@@ -3,9 +3,15 @@
 {% block content %}  
 <div class="container">
   <section class="hero">  <!-- Hero section for a welcoming banner -->
-    <h1>This page is for menu</h1>  <!-- Main heading -->
-    <p>just to add commit</p>  <!-- Short welcome message -->
-    <a href="#" class="btn">Book Now</a>  <!-- Placeholder button for reservations -->
+    <h2>Restaurant Menu</h2>
+
+    <ul>
+        {% for item in menu_items %}
+            <li>
+                <strong>{{ item.name }}</strong>: {{ item.description }} - ${{ item.price }}
+            </li>
+        {% endfor %}
+    </ul>>
   </section>
 </div>
 {% endblock %}

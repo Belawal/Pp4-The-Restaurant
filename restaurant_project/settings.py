@@ -57,6 +57,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Your custom login URL to fix the redirect issue
+LOGIN_URL = '/login/'
 ROOT_URLCONF = 'restaurant_project.urls'
 
 TEMPLATES = [

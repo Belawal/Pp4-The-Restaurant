@@ -4,7 +4,18 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  # Im
 from django.contrib.auth.decorators import login_required, user_passes_test  # Import decorators for access control
 from .models import Reservation  # Import Reservation model
 from .forms import ReservationForm  # Import ReservationForm from forms
+from .forms import ContactForm # Import ContactForm from forms
+from django.contrib import messages  # Import for flash messages
 
+def menu(request):
+    """Displays the restaurant menu."""
+    menu_items = [
+        {"name": "Margherita Pizza", "description": "Classic pizza with fresh mozzarella and basil.", "price": 12.99},
+        {"name": "Spaghetti Carbonara", "description": "Traditional pasta with eggs, cheese, pancetta, and pepper.", "price": 14.99},
+        {"name": "Caesar Salad", "description": "Crisp romaine lettuce with Caesar dressing and croutons.", "price": 9.99},
+        {"name": "Grilled Salmon", "description": "Fresh salmon fillet with a lemon butter sauce.", "price": 18.99},
+    ]
+    return render(request, 'booking/menu.html', {"menu_items": menu_items})  # Render the menu page
 
 def home(request):
     return render(request, 'booking/home.html')  # Renders the homepage
@@ -83,3 +94,42 @@ def user_cancel_reservation(request, reservation_id):
     reservation.delete()  # Delete the user's booking
     return redirect('user_reservations')
 
+def contact(request):
+    """Handles the contact form submission."""
+    if request.method == "POST":
+        form = ContactForm(request.POST)  # Get form data
+        if form.is_valid():  # Validate form
+            # For now, we only show a success message—no email sending
+            return render(request, 'booking/contact_success.html')
+    else:
+        form = ContactForm()  # Display empty form
+    return render(request, 'booking/contact.html', {"form": form})  # Render contact page
+
+@login_required
+def reservation_view(request):
+    """Handles reservation form submission with user authentication"""
+    if not request.user.is_authenticated:
+        messages.info(request, "Please log in to book a reservation.")  # Show login message
+        return redirect('login')  # Redirect to login page
+
+    if request.method == "POST":  # Check if form is submitted
+        form = ReservationForm(request.POST)  # Get reservation form data
+        if form.is_valid():  # Validate form
+            # Ensure reservation email matches logged-in user's email
+            if form.cleaned_data['email'] != request.user.email:
+                form.add_error('email', 'Email must match your signup email.')
+            else:
+                reservation = Reservation(
+                    user=request.user,
+                    name=form.cleaned_data['name'],
+                    email=form.cleaned_data['email'],
+                    date=form.cleaned_data['date'],
+                    time=form.cleaned_data['time'],
+                    guests=form.cleaned_data['guests']
+                )
+                reservation.save()  # Save the reservation
+                return redirect("user_reservations")
+    else:
+        form = ReservationForm()  # Create an empty form
+
+    return render(request, "booking/reservation.html", {"form": form})

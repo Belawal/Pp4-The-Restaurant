@@ -2,10 +2,12 @@
 
 {% block content %}  
 <div class="container">
-  <section class="hero">  <!-- Hero section for a welcoming banner -->
-    <h1>This page is for contact</h1>  <!-- Main heading -->
-    <p></p>  <!-- Short welcome message -->
-    <a href="#" class="btn">Book Now</a>  <!-- Placeholder button for reservations -->
+  <h2>Contact Us</h2>
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }} <!-- Render form fields -->
+      <button type="submit">Send Message</button>
+  </form>
   </section>
 </div>
 {% endblock %}
