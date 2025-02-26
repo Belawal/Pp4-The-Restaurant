@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = 'static/' # URL prefix for static files
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "restaurant_project", "booking", "static")  # Tells Django where to find static files
+    os.path.join(BASE_DIR, "restaurant_project", "booking", "static", "staticfiles" )  # Tells Django where to find static files
 ]
 
 # Default primary key field type
