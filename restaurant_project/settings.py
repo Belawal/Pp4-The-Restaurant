@@ -26,11 +26,12 @@ SECRET_KEY = 'django-insecure-z+r7-flqu=cw(eoh#y+-10&ce7wvv1q1%@zqwbg$tzf_6v4v-$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-aqd1poenhq9.ws-us118.gitpod.io', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-sz33ygj7m9i.ws-us119.gitpod.io', '127.0.0.1', 'localhost', '.herokuapp.com'
+]
 
 # Allow Gitpod URL for CSRF protection
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-belawal-pp4therestauran-aqd1poenhq9.ws-us118.gitpod.io',
+    'https://8000-belawal-pp4therestauran-sz33ygj7m9i.ws-us119.gitpod.io',
 ]
 
 
@@ -43,8 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'booking',
+    'django.contrib.staticfiles',    
 ]
 
 MIDDLEWARE = [
