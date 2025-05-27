@@ -1,11 +1,13 @@
-{% extends "booking/base.html" %}  <!-- Uses the base template -->
+{% extends "booking/base.html" %}
 
-{% block content %}  
-<div class="container">
-  <section class="hero">  <!-- Hero section for a welcoming banner -->
-    <h1>Welcome to Our Restaurant</h1>  <!-- Main heading -->
-    <br><p>Delicious meals, cozy atmosphere. Book your table now!</p>  <!-- Short welcome message -->
-    <a href="#" class="btn">Book Now</a>  <!-- Placeholder button for reservations -->
+{% block content %}
+<div class="container my-5">
+  <section class="p-4 bg-white shadow rounded text-center">
+    <h1 class="mb-4">Welcome to The Restaurant</h1>
+    <p class="lead mb-4">
+      Enjoy delicious meals made with fresh ingredients. Make a reservation today and treat yourself!
+    </p>
+    <a href="{% url 'reservation' %}" class="btn btn-primary btn-lg">Book Now</a>
   </section>
 </div>
 {% endblock %}
