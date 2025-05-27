@@ -19,6 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('booking.urls')),
-    # Connects to the Booking app
+   
     path('admin/', admin.site.urls),
 ]

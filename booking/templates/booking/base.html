@@ -1,4 +1,4 @@
-{% load static %}  <!-- Loads static files like CSS and images -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,15 +31,15 @@
                                 <!-- Link to view user's reservations -->
                         <li class="nav-item"><a class="nav-link" href="{% url 'user_reservations' %}">My Reservations</a></li>
 
-                                <!-- Only visible to admin users (is_staff) -->
+                                <!-- Only visible to admin -->
                     {% if request.user.is_staff %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'admin_reservations' %}">Manage Reservations</a></li>
                     {% endif %}
 
-                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li> <!-- Show Logout if logged in -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                     {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li> <!-- Show Sign Up if logged out -->
-                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li> <!-- Show Login if logged out -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
                     {% endif %}
                     
                     </ul>
@@ -49,7 +49,7 @@
     </header>
     
     <main>
-        {% block content %}{% endblock %} <!-- Placeholder for page content -->
+        {% block content %}{% endblock %}
     </main>
     
     <footer>

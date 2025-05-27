@@ -1,12 +1,11 @@
 from django.contrib import admin
-from .models import Reservation  # Importing the Reservation model
+from .models import Reservation
 
 
-@admin.register(Reservation) # Register your models here.
+@admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
    
-    list_display = ('name', 'email', 'date', 'time', 'guests') # Display these fields in the admin model list view
+    list_display = ('name', 'email', 'date', 'time', 'guests')
+    search_fields = ('name', 'email')
 
-    search_fields = ('name', 'email')  # Enable search functionality on these fields
-
-    list_filter = ('date', 'guests')  # Add filter options for easier navigation
+    list_filter = ('date', 'guests', 'time')

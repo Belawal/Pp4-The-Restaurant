@@ -1,6 +1,5 @@
 """
-{% extends "booking/base.html" %}  <!-- Extend from base template -->
-
+{% extends "booking/base.html" %}
 {% block content %}
 <div class="container"></div>
 <h2>Admin: View and Manage Reservations</h2>
@@ -8,28 +7,28 @@
 <!-- Display reservations in a table format -->
 <table border="1">
     <tr>
-        <th>Name</th>  <!-- Column for guest's name -->
-        <th>Email</th>  <!-- Column for guest's email address -->
-        <th>Date</th>  <!-- Column for reservation date -->
-        <th>Time</th>  <!-- Column for reservation time -->
-        <th>Guests</th>  <!-- Column for number of guests -->
-        <th>Actions</th>  <!-- Column for actions (e.g., cancel) -->
+        <th>Name</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Guests</th>
+        <th>Actions</th>
     </tr>
     
     <!-- Loop through all reservations and display each in a row -->
     {% for reservation in reservations %}
     <tr>
-        <td>{{ reservation.name }}</td>  <!-- Display guest's name -->
-        <td>{{ reservation.email }}</td>  <!-- Display guest's email -->
-        <td>{{ reservation.date }}</td>  <!-- Display reservation date -->
-        <td>{{ reservation.time }}</td>  <!-- Display reservation time -->
-        <td>{{ reservation.guests }}</td>  <!-- Display number of guests -->
+        <td>{{ reservation.name }}</td>
+        <td>{{ reservation.email }}</td>
+        <td>{{ reservation.date }}</td>
+        <td>{{ reservation.time }}</td>
+        <td>{{ reservation.guests }}</td>
         <td>
             <!-- Link to cancel the reservation -->
             <a href="{% url 'cancel_reservation' reservation.id %}">Cancel</a>
         </td>
     </tr>
-    {% endfor %}  <!-- End of reservation loop -->
+    {% endfor %}
 </table>
 </div>
-{% endblock %}  <!-- End of content block -->
+{% endblock %}

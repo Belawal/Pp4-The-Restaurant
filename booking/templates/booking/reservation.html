@@ -1,19 +1,33 @@
-{% extends "booking/base.html" %}  <!-- Uses the base template -->
+{% extends "booking/base.html" %}
 
 {% block content %}  
 <div class="container">
-  <section class="hero">  <!-- Hero section -->
-    <h2>Make a Reservation</h2>  <!-- page heading -->
-    <form method="post">  <!-- Form for reservation submission -->
+  <section class="hero" style="background: white; padding: 20px; border-radius: 8px; max-width: 600px; margin: auto;">
+    <h2>Make a Reservation</h2>
+    <form method="post">
 
-      {% csrf_token %}  <!-- CSRF protection token -->
+      {% csrf_token %}
 
-      {{ form.as_p }}  <!-- Render form fields as paragraphs -->
+      {{ form.as_p }}
       
-      <button type="submit">Submit Reservation</button>  <!-- Submit button -->
-  </form>
+      <button type="submit" style="
+        background-color: #ff6600; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        cursor: pointer;
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+      " 
+      onmouseover="this.style.backgroundColor='#e65c00';" 
+      onmouseout="this.style.backgroundColor='#ff6600';">
+        Submit Reservation
+      </button>
+    </form>
 
-  <a href="{% url 'home' %}">Back to Home</a>  <!-- Link to return to homepage -->
+    <a href="{% url 'home' %}" style="display: inline-block; margin-top: 1rem;">Back to Home</a>
   </section>
 </div>
 {% endblock %}
