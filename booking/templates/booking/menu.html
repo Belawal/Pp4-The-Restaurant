@@ -1,17 +1,20 @@
-{% extends "booking/base.html" %}  <!-- Uses the base template -->
+{% extends "booking/base.html" %}
 
-{% block content %}  
-<div class="container">
-  <section class="hero">  <!-- Hero section for a welcoming banner -->
-    <h2>Restaurant Menu</h2>
-
-    <ul>
-        {% for item in menu_items %}
-            <li>
-                <strong>{{ item.name }}</strong>: {{ item.description }} - ${{ item.price }}
-            </li>
-        {% endfor %}
-    </ul>>
+{% block content %}
+<div class="container my-5">
+  <section class="p-4 bg-white shadow rounded">
+    <h2 class="text-center mb-4">Our Menu</h2>
+    <div class="row">
+      {% for item in menu_items %}
+        <div class="col-md-6 mb-4">
+          <div class="border p-3 h-100 rounded">
+            <h5 class="mb-2">{{ item.name }}</h5>
+            <p class="mb-2 text-muted">{{ item.description }}</p>
+            <p class="fw-bold">${{ item.price }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </section>
 </div>
 {% endblock %}
