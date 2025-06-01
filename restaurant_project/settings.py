@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-z+r7-flqu=cw(eoh#y+-10&ce7wvv1q1%@zqwbg$tzf_6v4v-$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-sz33ygj7m9i.ws-us119.gitpod.io', '127.0.0.1', 'localhost', '.herokuapp.com'
+ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-sz33ygj7m9i.ws-us119.gitpod.io', '127.0.0.1', 'localhost', 'resturant-pp4-9aa9c2dc0d6f.herokuapp.com', '.herokuapp.com'
 ]
 
 # Allow Gitpod URL for CSRF protection
