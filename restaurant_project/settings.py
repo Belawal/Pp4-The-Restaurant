@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['8000-belawal-pp4therestauran-sz33ygj7m9i.ws-us120.gitpod.io', 
 
 # Allow Gitpod URL for CSRF protection
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-belawal-pp4therestauran-sz33ygj7m9i.ws-us119.gitpod.io',
+    'https://gitpod.io',
 ]
 
 
