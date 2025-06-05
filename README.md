@@ -174,7 +174,7 @@ This project is responsive and works well on different screen sizes:
 - Mobile (up to 768px)
 - Tablet (768px - 1024px)
 - Desktop (1024px and above)
-![Responsive](<assets/images/screen responsive.png>)
+![Responsive View](<assets/images/ScreenshotuiDev.jpg>)
 
 ## Wireframes
     Wireframe with a basic layout for various screen sizes
