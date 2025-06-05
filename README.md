@@ -2,9 +2,31 @@
 
 ![Screen Responsive](<assets/images/screen responsive.png>)
 
-This is a Django-based web app that lets users make restaurant reservations. Users can sign up, log in, and manage their bookings. Admins can view and cancel any reservation.
+Welcome to our restaurant website — a smart and easy way to manage bookings and connect with your customers online.
 
-## Goals
+This website is made to help both the restaurant owner and the customers. Customers can easily check available tables and book their seats online anytime. This saves them time and gives them a smooth experience.
+
+For the restaurant owner, the website helps to keep track of all reservations in one place. You can see which times are busy, which tables are booked, and avoid overbooking. This helps you manage your team and kitchen better, and improves customer service.
+
+Key Features:
+Online Table Booking: Customers can book a table through the website, 24/7.
+
+Email Confirmation: After booking, customers get an email to confirm their reservation.
+
+User Accounts: Customers can sign up, log in, and view their past bookings.
+
+Admin Dashboard: The owner can see all bookings, cancel reservations, and update booking settings.
+
+Mobile Friendly: The website works on phones, tablets, and computers.
+
+Benefits:
+For Customers: Quick and easy way to book a table, with clear confirmation and less waiting.
+
+For Owner: Save time, reduce booking mistakes, and give better service by planning ahead.
+
+This website helps bring your restaurant online and gives your business a more professional image.
+
+
 
 ### Visitor Goals
 - Learn about the restaurant's menu and offerings.
@@ -28,11 +50,20 @@ This is a Django-based web app that lets users make restaurant reservations. Use
 - **Menu Page:** Displays a sample menu with dishes and prices.
 - **Contact Form:** Users can send messages via a contact form.
 
-## How It Works
-
-1. Users sign up or log in.
-2. Logged-in users can make, view, and cancel their reservations.
-3. Admins can view and cancel any reservation through a dedicated panel.
+## User Stories
+1. As a, user I want to register an account so that I can book a table.
+2. As a user, I want to log in to my account so that I can access my bookings.
+3. As a user, I want to log out of my account so that I can securely end my session.
+4. As a user, I want to reset my password so that I can regain access to my account.
+5. As a user, I want to book a table for a specific date and time so that I can reserve a spot.
+6. As a user, I want to view my bookings so that I can manage them.
+7. As a user, I want to edit my bookings so that I can update the date, time, or number of guests..
+8. As a user, I want to cancel my bookings so that I can free up my reservation.
+9. As an admin, I want to log in to an admin dashboard so that I can manage bookings.
+10. As an admin, I want to view all bookings so that I can manage them.
+11. As an admin, I want to filter bookings by date so that I can view reservations for a specific day.
+12. As a developer, I want to test the application so that I can ensure it works as expected.
+13. As a developer, I want to deploy the application to a cloud platform so that it is accessible to users.
 
 ## Setup Instructions
 
@@ -127,6 +158,7 @@ This is a Django-based web app that lets users make restaurant reservations. Use
 
 - Django (Python Web Framework)
 - HTML/CSS (Templates and Styling)
+- BootStrap
 
 ## Color Scheme
 
@@ -150,8 +182,14 @@ This project is responsive and works well on different screen sizes:
 ![wireframe](<assets/images/wireframe layout 2.png>)
 ![wireframe](<assets/images/wireframe layout 3.png>)
 
-## Debugging and Testing
+## Testing & Validation
+- HTML checked and passed using W3C HTML5 Validator.
+- CSS validated with W3C CSS Validator and autoprefixer used.
+- All links tested using W3C Link Checker.
+- JavaScript files tested in browser console.
+- JSHint to make sure everything works fine and no big errors.
 
+## Debugging and Testing
 During the setup and initial execution of the Django project, several issues were encountered. This section outlines these issues and their solutions:
 
 **Error #1: Template Context Not Displaying Data**
