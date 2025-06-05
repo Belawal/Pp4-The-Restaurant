@@ -174,13 +174,13 @@ This project is responsive and works well on different screen sizes:
 - Mobile (up to 768px)
 - Tablet (768px - 1024px)
 - Desktop (1024px and above)
-![Responsive View](<assets/images/ScreenshotuiDev.jpg>)
+![Responsive View](assets/images/ScreenshotuiDev.jpg)
 
 ## Wireframes
     Wireframe with a basic layout for various screen sizes
-![wireframe](<assets/images/wireframe layout.png>)
-![wireframe](<assets/images/wireframe layout 2.png>)
-![wireframe](<assets/images/wireframe layout 3.png>)
+![wireframe](<assets/images/wireframeLayout.jpg>)
+![wireframe](<assets/images/wireframeLayout2.jpg>)
+![wireframe](<assets/images/wireframeLayout3.jpg>)
 
 ## Testing & Validation
 - HTML checked and passed using W3C HTML5 Validator.
