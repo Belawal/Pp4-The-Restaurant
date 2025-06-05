@@ -177,7 +177,8 @@ This project is responsive and works well on different screen sizes:
 ![Responsive View](assets/images/ScreenshotuiDev.jpg)
 
 ## Wireframes
-    Wireframe with a basic layout for various screen sizes
+    Wireframe with a basic layout for various screen sizes, also will contain the smae structure fo the enitre webstite
+
 ![wireframe](<assets/images/wireframeLayout.jpg>)
 ![wireframe](<assets/images/wireframeLayout2.jpg>)
 ![wireframe](<assets/images/wireframeLayout3.jpg>)
@@ -197,11 +198,6 @@ During the setup and initial execution of the Django project, several issues wer
 **Error #2: Migration Not Applying**
 - **Issue:** Changes in models not reflecting in the database.
 - **Solution:**
-
-    ```bash
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
 
 **Error #3: Form Not Saving Data**
 - **Issue:** Form submission doesn't save to the database.
@@ -223,39 +219,39 @@ During the setup and initial execution of the Django project, several issues wer
 - **Issue:** Attempt to access a non-existent table in SQLite.
 - **Solution:** Ensure migration files are applied:
 
-    ```bash
-    python manage.py migrate booking
-    ```
-
-If the error persists, check the migration history:
-
-    ```bash
-    python manage.py showmigrations
-    ```
-
-Reset migrations if needed:
-
-    ```bash
-    python manage.py migrate booking zero
-    python manage.py makemigrations booking
-    python manage.py migrate booking
-    ```
-
 **Error #8: Login and Signup Pages Not Working**
 - **Issue:** Login and signup templates not rendering.
 - **Solution:** Ensure templates are in the correct directory and views are defined properly.
-
-Restart the server:
-
-    ```bash
-    python manage.py runserver
-    ```
 
 ## Future Improvements
 
 - Add reservation editing.
 - Improve UI/UX.
 - Integrate email notifications.
+
+## Deployment
+**Github**
+1. Push your code to a GitHub repository.
+2. Log in to your GitHub account.
+3. Go to the repository on GitHub → Settings → Pages.
+4. Under "Source," select the branch (`main`) and folder (`root`).
+5. Save and wait a few minutes for the site to be live.
+6. Site will be available at `https://github.com/Belawal/Pp4-The-Restaurant.git`.
+
+**Heroku**
+1. Go to (heroku.com) and log in.
+2. Click New → Create new app.
+3. Enter an app name and then click Create app.
+4. In the app dashboard, go to the Deploy tab.
+5. Under Deployment method, select GitHub.
+6. Connect your GitHub account and search for your repository.
+7. Click Connect next to your repo.
+8. Choose the branch you want to deploy (`main`).
+9. Click Deploy Branch to start the deployment.
+
+## LINKS
+**GITHUB** :https://github.com/Belawal/Pp4-The-Restaurant.git
+**HEROKU APP** :https://resturant-pp4-9aa9c2dc0d6f.herokuapp.com/
 
 ## License
 
