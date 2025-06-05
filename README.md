@@ -183,11 +183,9 @@ This project is responsive and works well on different screen sizes:
 ![wireframe](<assets/images/wireframeLayout3.jpg>)
 
 ## Testing & Validation
-- HTML checked and passed using W3C HTML5 Validator.
+- HTML code checked and passed using W3C HTML5 Validator.
 - CSS validated with W3C CSS Validator and autoprefixer used.
 - All links tested using W3C Link Checker.
-- JavaScript files tested in browser console.
-- JSHint to make sure everything works fine and no big errors.
 
 ## Debugging and Testing
 During the setup and initial execution of the Django project, several issues were encountered. This section outlines these issues and their solutions:
